@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add to Contacts</title>
+</head>
+<body>
+  <h1>Add My Contact to Your Address Book</h1>
+  
+  <p>Click the link below to add my contact to your address book:</p>
+  
+  <a href="vnd.apple.vcard://BEGIN:VCARD%0AVERSION:3.0%0AFN:Your Name%0AN:Your Name;;;%0ATEL;CELL:<phone_number1>%0ATEL;CELL:<phone_number2>%0AEMAIL;INTERNET:<email_address1>%0AEMAIL;INTERNET:<email_address2>%0AEND:VCARD">
+    Add to Contacts (iOS)
+  </a>
+  
+  <br><br>
+  
+  <a href="vnd.android.cursor.item/person/BEGIN:VCARD%0AVERSION:3.0%0AFN:Your Name%0AN:Your Name;;;%0ATEL;CELL:<phone_number1>%0ATEL;CELL:<phone_number2>%0AEMAIL;INTERNET:<email_address1>%0AEMAIL;INTERNET:<email_address2>%0AEND:VCARD">
+    Add to Contacts (Android)
+  </a>
+  
+  <br><br>
+  
+  <p>Alternatively, you can download my vCard file and import it manually:</p>
+  
+  <a href="contact.vcf" download>Download vCard</a>
+  
+  <script>
+    // Replace <phone_number1>, <phone_number2>, <email_address1>, and <email_address2> with your actual contact information
+    var phoneNumber1 = '+918891346114';
+    var phoneNumber2 = '+26774725310';
+    var emailAddress1 = 'sanjay842003@gmail.com';
+    var emailAddress2 = 'sanjay48m@icloud.com';
+    
+    // Update the links with the actual contact information
+    var iosLink = document.querySelector('a[href^="vnd.apple.vcard"]');
+    iosLink.href = 'vnd.apple.vcard://BEGIN:VCARD%0AVERSION:3.0%0AFN:Your Name%0AN:Your Name;;;%0ATEL;CELL:' + phoneNumber1 + '%0ATEL;CELL:' + phoneNumber2 + '%0AEMAIL;INTERNET:' + emailAddress1 + '%0AEMAIL;INTERNET:' + emailAddress2 + '%0AEND:VCARD';
+    
+    var androidLink = document.querySelector('a[href^="vnd.android.cursor.item"]');
+    androidLink.href = 'vnd.android.cursor.item/person/BEGIN:VCARD%0AVERSION:3.0%0AFN:Your Name%0AN:Your Name;;;%0ATEL;CELL:' + phoneNumber1 + '%0ATEL;CELL:' + phoneNumber2 + '%0AEMAIL;INTERNET:' + emailAddress1 + '%0AEMAIL;INTERNET:' + emailAddress2 + '%0AEND:VCARD';
+  </script>
+</body>
+</html>
